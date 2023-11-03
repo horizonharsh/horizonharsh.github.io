@@ -1,100 +1,119 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
-    />
-    <title>Gym Website</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html">Gym Website</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="./index.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./timings.html">Timings</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./about.html">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 p-5">
-          <h2>Welcome to the Fitness World!</h2>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-12">
-          <h4>Services</h4>
-          <ul>
-            <li>Service 1</li>
-            <li>Service 2</li>
-            <li>Service 3</li>
-            <li>Service 4</li>
-          </ul>
-        </div>
-        <hr />
-        <div class="col-12">
-          <h4>Timings</h4>
-          <ul>
-            <li>Timings 1</li>
-            <li>Timings 2</li>
-            <li>Timings 3</li>
-            <li>Timings 4</li>
-          </ul>
-        </div>
-        <hr />
-        <div class="col-12">
-          <h4>Plans</h4>
-          <ul>
-            <li>Plans 1</li>
-            <li>Plans 2</li>
-            <li>Plans 3</li>
-            <li>Plans 4</li>
-          </ul>
-        </div>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dietary Recommendation</title>
+</head>
+<body>
+    <div style="background: linear-gradient(to right, #d0c6c4, #131313); color: #fff; padding: 20px; text-align: center; font-size: 24px;">
+        <h1 style="margin: 0;">Nutrion Calculator</h1>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta tags and title go here -->
+</head>
+<body>
+<div style="background: linear-gradient(to right, #ecefea, #9e9ba8); color: #fff; padding: 20px; text-align: center; font-size: 24px;">
+    <h1 style="margin: 0;">Calorie  Protein  Carbohydrates</h1>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate here</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <div class="background">
+        <h1>Calculate here</h1>
+        <!-- Your form and content go here -->
+    </div>
+
+</body>
+</html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculate here</title>
+<script>
+    function calculateIntake() {
+        // Get user input
+        var weight = parseFloat(document.getElementById("weight").value);
+        var height = parseFloat(document.getElementById("height").value);
+        var age = parseInt(document.getElementById("age").value);
+
+        // Constants for calorie calculations (simplified)
+        var gainFactor = 1.2; // Adjust this factor for gaining
+        var maintainFactor = 0.6; // Adjust this factor for maintaining
+        var cutFactor = 1.3; // Adjust this factor for cutting
+
+        // Calculate Basal Metabolic Rate (BMR) using Mifflin-St Jeor Equation
+        var bmr = 10 * weight + 6.25 * height - 5 * age;
+
+        // Calculate Total Daily Energy Expenditure (TDEE) based on activity level
+        var activityLevel = document.querySelector('input[name="activity"]:checked').value;
+        var tdee;
+        if (activityLevel === "gain") {
+            tdee = bmr * gainFactor;
+sjdnvudjn
+            tdee = bmr * maintainFactor;
+        } else if (activityLevel === "cut") {
+            tdee = bmr * cutFactor;
+        }
+
+        // Calculate recommended nutrient intake (simplified)
+        var calories = tdee;
+        var protein = (weight * 2.2) * calories /2700;//Protein intake in grams
+        var carbohydrates = 0.45 * calories / 4; // Carbohydrate intake in grams
+
+        // Display the results
+        document.getElementById("calories").textContent = "Calories: " + calories.toFixed(2);
+        document.getElementById("protein").textContent = "Protein (g): " + protein.toFixed(2);
+        document.getElementById("carbohydrates").textContent = "Carbohydrates (g): " + carbohydrates.toFixed(2);
+    }
+</script>
+</head>
+<body>
+<h1>Calculate here</h1>
+<form method="post" onsubmit="calculateIntake(); return false;">
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" required step="0.01"><br>
+
+    <label for="height">Height (cm):</label>
+    <input type="number" id="height" required step="0.01"><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" required><br>
+
+    <p>Select activity level:</p>
+    <input type="radio" name="activity" value="gain" required> Gaining Weight
+    <input type="radio" name="activity" value="maintain" required> Maintaining Weight
+    <input type="radio" name="activity" value="cut" required> Cutting Weight<br>
+
+    <button type="submit">Calculate</button>
+</form>
+
+<div id="result">
+    {% if calories %}
+        <h2>Your Daily Intake:</h2>
+        <p id="calories"></p>
+        <p id="protein"></p>
+        <p id="carbohydrates"></p>
+    {% endif %}
+</div>
+<style>
+    body{
+        background-image: url(diet.jpg);
+        height: 100vh;
+        breadth: 500vh
+        background-size: cover ;
+        background-position: center; 
+   }
+    1</body>
+</head>
+ 
+</body>
 </html>
